@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Match</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   
+    <% if lawyer_signed_in? %>
+      <%= link_to 'Efetuar logoff…[lawyer]', destroy_lawyer_session_path, method: :delete %>
+      <p> Advogado logado: <%= current_lawyer.email %> </p>
+    <% end %>
+
+    <h1>lawyers</h1>
+    <%= yield %>
+  </body>
+</html>

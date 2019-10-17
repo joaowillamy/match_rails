@@ -1,0 +1,11 @@
+<h1>Editing Request</h1>
+
+<%= render 'form', request: @request %>
+<% if @request.user.lawyer_id %>
+  <p> <strong> Cliente </strong><%= @request.user.lawyer.email %> </p>
+<% else %>
+<p> <strong> Sem advogado </strong></p>
+<% end %>
+
+<%= link_to 'Show', @request %> |
+<%= link_to 'Back', requests_path %>

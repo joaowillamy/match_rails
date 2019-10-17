@@ -1,0 +1,2 @@
+module LawyersBackoffice::WelcomeHelper
+end

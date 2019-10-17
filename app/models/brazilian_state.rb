@@ -1,0 +1,2 @@
+class BrazilianState < ApplicationRecord
+end

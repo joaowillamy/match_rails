@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Match</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>users</h1>
+    
+    <% if user_signed_in? %>
+      <%= link_to 'Efetuar logoff…[user]', destroy_user_session_path, method: :delete %>
+      <p> Cliente logado: <%= current_user.email %> </p>
+    <% end %>
+    
+    <%= yield %>
+  </body>
+</html>

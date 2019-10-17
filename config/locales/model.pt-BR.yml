@@ -1,0 +1,9 @@
+pt-BR:
+  activerecord:
+    models:
+      user: Cliente
+      lawyer: Advogado
+    attributes:
+      user:
+        login: "Entrar"
+      # will translate User attribute "login" as "Handle"
