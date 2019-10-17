@@ -13,7 +13,7 @@ class DeviseCreateLawyers < ActiveRecord::Migration[6.0]
 
       ## Rememberable
       t.datetime :remember_created_at
-      t.references :brazilian_state, null: false, foreign_key: true
+      t.references :brazilian_state, null: true, foreign_key: true
       ## Trackable
       # t.integer  :sign_in_count, default: 0, null: false
       # t.datetime :current_sign_in_at

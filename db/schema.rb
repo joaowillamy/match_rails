@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_10_17_171127) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer "brazilian_state_id", null: false
+    t.integer "brazilian_state_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["brazilian_state_id"], name: "index_lawyers_on_brazilian_state_id"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 2019_10_17_171127) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "lawyer_id"
-    t.integer "brazilian_state_id", null: false
+    t.integer "brazilian_state_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["brazilian_state_id"], name: "index_users_on_brazilian_state_id"
