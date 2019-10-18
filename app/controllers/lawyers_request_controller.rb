@@ -14,8 +14,12 @@ class LawyersRequestController < LawyersBackofficeController
   end
 
   def accept
-    current_lawyer.users << User.find_by(id: params[:id])
+    @user = User.find(id: params[:id])
+    @user.request.status = :pending
+    @user.request.save
+    current_lawyer.users << @user
     current_lawyer.save  
+
     redirect_to lawyers_request_index_path 
   end
 end
