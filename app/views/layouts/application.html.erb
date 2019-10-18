@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="body_application">
 
 
  <header id="main-header">
@@ -18,7 +18,11 @@
       <nav>
         <ul>
           <li> <%= link_to 'Home', welcome_index_path %> </li>
+          <% if user_signed_in? %>
+            <li> <%= link_to 'Meu Pedido', requests_path %> </li>
+          <% end %>
           <li> <%= link_to 'Sou Advogado', lawyers_request_index_path %> </li>
+          
           <li class="btn btn-pink"> <%= link_to 'Sou Cliente', requests_path %> </li>
         </ul>
       </nav>

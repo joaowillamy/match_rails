@@ -10,15 +10,24 @@
   </head>
 
   <body>
-    <h1>users</h1>
+
+  
+ <header id="main-header">
+    <div class="content">
+        <img src="https://uploads-ssl.webflow.com/5b7c0ffd36ef667b08a4a684/5bc76f0d3d3815109b416333_cor.svg" />
+      <nav>
+        <ul>
+          <li> <%= link_to 'Meu Pedido', requests_path %> </li>
+          <li> <%= link_to 'Perfil', edit_user_registration_path %> </li>
+          <li class="btn btn-pink"> <%= link_to 'Sair', destroy_user_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
     
-    <% if user_signed_in? %>
-      <%= link_to 'Efetuar logoff…[user]', destroy_user_session_path, method: :delete %>
-      <p> Cliente logado: <%= current_user.email %> </p>
-    <% end %>
     
-    <%= link_to 'home', requests_path %>
-    <%= link_to 'Perfil', edit_user_registration_path %>
+  
     
     <%= yield %>
 

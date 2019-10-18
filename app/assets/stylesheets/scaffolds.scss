@@ -51,6 +51,7 @@ div {
   margin: 10px 0;
 }
 #notice {
+  // padding: 10px 0;
   color: green;
 }
 
@@ -58,11 +59,13 @@ div {
   padding: 2px;
   background-color: red;
   display: table;
+  border-radius: 16px;
 }
 
 #error_explanation {
-  width: 450px;
-  border: 2px solid red;
+  margin-top: 10px;
+  width: 100%;
+  // border: 2px solid red;
   padding: 7px 7px 0;
   margin-bottom: 20px;
   background-color: #f0f0f0;
@@ -73,16 +76,21 @@ div {
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
+    // background-color: #c00;
+    color: #c00;
   }
 
   ul li {
     font-size: 12px;
-    list-style: square;
+    list-style: none;
   }
 }
 
 label {
-  display: block;
+  // display: block;
+  background: #fff;
+  background-color: white !important;
+  border: none;
+  padding: 3px;
+  border-radius: 0px;
 }

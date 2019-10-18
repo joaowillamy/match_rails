@@ -1,31 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="content-user">
 
-<h1>Requests</h1>
+  <%# <p id="notice"><%= notice </p>%>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <h1 class="title" >Pedido de Indenização <%= link_to 'Criar Pedido', new_request_path %></h1>
 
-  <tbody>
-      <tr>
-      <% if @request %>
-        <td><%= @request.title %></td>
-        <td><%= @request.description %></td>
-        <td><%= @request.user.email %></td>
-        <td><%= link_to 'Show', @request %></td>
-        <td><%= link_to 'Edit', edit_request_path(@request) %></td>
-        <td><%= link_to 'Destroy', @request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-      </tr>
-  </tbody>
-</table>
+   <% if @request %>
+     <%= @request.title %>
+     <%= @request.description %>
+     <%= @request.user.email %>
+     
+     <%= link_to 'Edit', edit_request_path(@request) %>
+     <%= link_to 'Destroy', @request, method: :delete, data: { confirm: 'Are you sure?' } %>
+   <% else %>
+      <h3>Faça seu pedido de idenização</h3>
+   <% end %>
 
-<br>
 
-<%= link_to 'New Request', new_request_path %>
+  
+
+</div>
