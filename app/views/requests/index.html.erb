@@ -11,7 +11,7 @@
       <p> <strong>Descrição</strong> <%=@request.description %> </p>
   
       <h4> Status</h4>
-      <p> <strong><%=@request.status %></strong>  </p>
+      <%= render 'status', request: @request %>
 
       <h4>Advogado</h4>
         <p> <strong><%= current_user.lawyer ? current_user.email : 'Aguardando Match' %></strong>  </p>

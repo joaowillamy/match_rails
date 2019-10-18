@@ -11,13 +11,16 @@
         <p> <strong>Titulo</strong> <%= user.request.title %> </p>
         <p> <strong>Descrição</strong> <%= user.request.description %> </p>
         
-        <p class="status">  <strong>status</strong> <%= user.request.status %> </p>
+        <%= render 'status', request: user.request %>
 
         <% if user.request.pending? %> 
           <%= link_to "Finalizar caso", finished_path(id: user), method: :post %>
         <% end %>
         
       </div>
+    <% end %>
+    <% unless @users.any? %>        
+      <h3>Volter Mais tarde</h3>
     <% end %>
   <div>
 </div>

@@ -30,7 +30,8 @@ body {
 }
 
 input,
-button {
+button,
+select {
   outline: 0;
 }
 
@@ -130,7 +131,7 @@ div.userss .user-content {
   max-height: 500px;
   background-color: #fff;
 }
-
+select,
 .field input {
   width: 220px;
   border: 1px solid #e5ecf0;
@@ -161,4 +162,14 @@ div.userss .user-content {
   header#main-header nav {
     /* display: none; */
   }
+}
+
+.status-open {
+  color: #ccc;
+}
+.status-pending {
+  color: red;
+}
+.status-finished {
+  color: rgb(1, 187, 1);
 }

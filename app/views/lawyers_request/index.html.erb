@@ -14,11 +14,15 @@
         
         <p class="status">  <strong>status</strong> <%= user.request.status %> </p>
         
-<%= render 'form', request: @request %>
+          <%= render 'status', request: user.request %>
 
           <%= link_to "Aceitar caso", accept_path(id: user), method: :post %>
         
       </div>
+    <% end %>
+
+    <% unless @users.any? %>        
+      <h3>Volter Mais tarde</h3>
     <% end %>
   <div>
 </div>
