@@ -17,6 +17,10 @@
       <p> Cliente logado: <%= current_user.email %> </p>
     <% end %>
     
+    <%= link_to 'home', requests_path %>
+    <%= link_to 'Perfil', edit_user_registration_path %>
+    
     <%= yield %>
+
   </body>
 </html>

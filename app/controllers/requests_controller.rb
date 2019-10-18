@@ -15,8 +15,10 @@ class RequestsController < UsersBackofficeController
   # GET /requests/new
   def new
     @request = current_user.request
-    if(@request.id > 0)
+    if(@request)
       redirect_to edit_request_url(@request) , notice: 'Request was successfully updated.'
+    else
+      @request = Request.new
     end
   end
 
@@ -27,8 +29,8 @@ class RequestsController < UsersBackofficeController
   # POST /requests
   # POST /requests.json
   def create
-    @request = current_user.request.new(request_params)
-
+    current_user.request = Request.new(request_params)
+    @request = current_user.request
     respond_to do |format|
       if @request.save
         format.html { redirect_to @request, notice: 'Request was successfully created.' }

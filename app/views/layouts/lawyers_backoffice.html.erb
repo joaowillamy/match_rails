@@ -16,7 +16,11 @@
       <p> Advogado logado: <%= current_lawyer.email %> </p>
     <% end %>
 
-    <h1>lawyers</h1>
+    <%= link_to 'Pegar casos', lawyers_request_index_path %>
+    <%= link_to 'Meus', lawyers_request_my_list_path %>
+    <%= link_to 'Perfil', edit_lawyer_registration_path %>
+    
+    
     <%= yield %>
   </body>
 </html>
