@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+  <div class="banner">
+    <h1>Reivindique uma <br> <strong> indenização‍ </strong> pelo seu voo</h1>
+    <br>
+     <div class="btn btn-white"> <%= link_to 'Verifique agora', requests_path %> </div>
+  </div>
+
+  <div class="banner lawyer">
+    <h1>É um advogado? <br> <strong>Solucione indenização‍ </strong>para nossos clientes</h1>
+    <br>
+     <div class="btn btn-pink"> <%= link_to 'Verifique agora', lawyers_request_index_path %> </div>
+  </div>

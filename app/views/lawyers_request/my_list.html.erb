@@ -3,4 +3,6 @@
 <% @users.each do |user| %>
   <%=  user.request.title %>
   <%=  user.email %>
+  <%= link_to "Profile", finished_path(id: user), method: :post %>
+  <br>
 <% end %>

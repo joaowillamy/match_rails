@@ -10,9 +10,21 @@
   </head>
 
   <body>
-      <%= link_to 'Home', welcome_index_path %>
-      <%= link_to 'Cliente', requests_path %>
-      <%= link_to 'Advogado', lawyers_request_index_path %>
+
+
+ <header id="main-header">
+    <div class="content">
+        <img src="https://uploads-ssl.webflow.com/5b7c0ffd36ef667b08a4a684/5bc76f0d3d3815109b416333_cor.svg" />
+      <nav>
+        <ul>
+          <li> <%= link_to 'Home', welcome_index_path %> </li>
+          <li> <%= link_to 'Sou Advogado', lawyers_request_index_path %> </li>
+          <li class="btn btn-pink"> <%= link_to 'Sou Cliente', requests_path %> </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+      
     <%= yield %>
   </body>
 </html>
