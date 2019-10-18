@@ -3,14 +3,23 @@
   <%# <p id="notice"><%= notice </p>%>
 
   <h1 class="title" >Pedido de Indenização <%= link_to 'Criar Pedido', new_request_path %></h1>
+  <% if @request %>
+    <div class="info">
+    <h4> Informações</h4>
+      <p> <strong>Código</strong> <%=@request.id %> </p>
+      <p> <strong>Titulo</strong> <%=@request.title %> </p>
+      <p> <strong>Descrição</strong> <%=@request.description %> </p>
+  
+      <h4> Status</h4>
+      <p> <strong><%=@request.status %></strong>  </p>
 
-   <% if @request %>
-     <%= @request.title %>
-     <%= @request.description %>
-     <%= @request.user.email %>
-     
-     <%= link_to 'Edit', edit_request_path(@request) %>
-     <%= link_to 'Destroy', @request, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <h4>Advogado</h4>
+        <p> <strong><%= current_user.lawyer ? current_user.email : 'Aguardando Match' %></strong>  </p>
+        
+      <%= link_to 'Editar', edit_request_path(@request) %>
+      <%= link_to 'Deletar', @request, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
    <% else %>
       <h3>Faça seu pedido de idenização</h3>
    <% end %>

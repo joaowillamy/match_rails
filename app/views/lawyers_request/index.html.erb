@@ -1,8 +1,24 @@
-<h1>LawyersRequest#index</h1>
+<div class="content-lawyer">
 
-<% @users.each do |user| %>
-  <%=  user.request.title %>
-  <%=  user.email %>
-  <%= link_to "Profile", accept_path(id: user), method: :post %>
-  
-<% end %>
+  <%# <p id="notice"><%= notice </p>%>
+
+  <h1 class="title" >Encontre um cliente</h1>
+  <div class="itens">
+    <% @users.each do |user| %>
+      <div class="item">
+        <img src="https://image.flaticon.com/icons/svg/145/145867.svg"> 
+        <p class="email"> <strong><%= user.email %></strong>  </p>
+
+        <p> <strong>Titulo</strong> <%= user.request.title %> </p>
+        <p> <strong>Descrição</strong> <%= user.request.description %> </p>
+        
+        <p class="status">  <strong>status</strong> <%= user.request.status %> </p>
+        
+<%= render 'form', request: @request %>
+
+          <%= link_to "Aceitar caso", accept_path(id: user), method: :post %>
+        
+      </div>
+    <% end %>
+  <div>
+</div>

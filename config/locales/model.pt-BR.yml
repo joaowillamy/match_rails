@@ -3,6 +3,7 @@ pt-BR:
     models:
       user: Cliente
       lawyer: Advogado
+      request: Pedido
     attributes:
       user:
         login: "Entrar"

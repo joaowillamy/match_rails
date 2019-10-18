@@ -159,6 +159,6 @@ div.userss .user-content {
 
 @media all and (max-width: 600px) {
   header#main-header nav {
-    display: none;
+    /* display: none; */
   }
 }

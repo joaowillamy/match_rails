@@ -45,4 +45,20 @@
     flex-direction: column;
     height: 60%;
   }
+  h4 {
+    font-size: 20px;
+    color: rgb(133, 133, 133);
+  }
+  .info {
+    margin-top: 30px;
+    p {
+      margin: 10px 0 10px 30px;
+    }
+  }
+}
+
+@media all and (max-width: 1130px) {
+  // max-width: 600px;
+  header#main-header nav {
+  }
 }

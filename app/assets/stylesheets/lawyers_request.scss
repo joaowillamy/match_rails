@@ -1,3 +1,106 @@
 // Place all the styles related to the lawyers_request controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content-lawyer {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 30px;
+  background: #fff;
+  height: 500px;
+  margin-top: 30px;
+  box-shadow: rgb(139, 6, 73) 0px 3px 3px;
+  .title {
+    font-size: 27px;
+    color: #f39;
+    padding: 20px 0 10px;
+    border-bottom: 1px solid #f39;
+    display: flex;
+    justify-content: space-between;
+
+    // padding: 10px 15px;
+  }
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    color: #ccc;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60%;
+  }
+  h4 {
+    font-size: 20px;
+    color: rgb(133, 133, 133);
+  }
+  .itens {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .item {
+    border: 0.5px solid #f39;
+    box-shadow: rgb(204, 204, 204) 0px 1px 3px;
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-right: 15px;
+    font-size: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    p {
+      margin: 2px 10px;
+      strong {
+        color: rgb(150, 150, 150);
+      }
+    }
+    img {
+      margin: 15px 0;
+      border-radius: 50%;
+      box-shadow: rgb(204, 204, 204) 0px 1px 3px;
+      width: 100px;
+      height: 100px;
+    }
+    .email {
+      margin: 0 20px 9px 20px;
+    }
+    .status {
+      margin-top: 9px;
+    }
+    // transition: all 0.5s;
+    a {
+      font-size: 14px;
+      color: #f39;
+      height: 34px;
+      display: flex;
+      border: 1px solid #f39;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      padding: 0 10px;
+      border-radius: 16px;
+      margin: 10px 0;
+      transition: all 0.3s;
+    }
+    a:hover {
+      background: #f39;
+      color: white;
+    }
+  }
+
+  .item:hover {
+    box-shadow: rgb(175, 175, 175) 0px 1px 5px;
+  }
+}
+
+@media all and (max-width: 1130px) {
+  // max-width: 600px;
+  header#main-header nav {
+  }
+}

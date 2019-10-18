@@ -11,16 +11,21 @@
 
   <body>
    
-    <% if lawyer_signed_in? %>
-      <%= link_to 'Efetuar logoff…[lawyer]', destroy_lawyer_session_path, method: :delete %>
-      <p> Advogado logado: <%= current_lawyer.email %> </p>
-    <% end %>
 
-    <%= link_to 'Pegar casos', lawyers_request_index_path %>
-    <%= link_to 'Meus', lawyers_request_my_list_path %>
-    <%= link_to 'Perfil', edit_lawyer_registration_path %>
-    
-    
+ <header id="main-header">
+    <div class="content">
+        <img src="https://uploads-ssl.webflow.com/5b7c0ffd36ef667b08a4a684/5bc76f0d3d3815109b416333_cor.svg" />
+      <nav>
+        <ul>
+          <li> <%= link_to 'Pegar casos', lawyers_request_index_path %> </li>
+          <li> <%= link_to 'Meu casos', lawyers_request_my_list_path %> </li>
+          <%# <li> <%= link_to 'Perfil', edit_lawyer_registration_path  </li> %>
+          <li class="btn btn-pink"> <%= link_to 'Sair', destroy_lawyer_session_path, method: :delete %></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
     <%= yield %>
   </body>
 </html>
