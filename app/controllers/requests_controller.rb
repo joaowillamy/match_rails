@@ -4,7 +4,7 @@ class RequestsController < UsersBackofficeController
   # GET /requests
   # GET /requests.json
   def index
-    @requests = current_user.requests
+    @request = current_user.request
   end
 
   # GET /requests/1
@@ -14,7 +14,10 @@ class RequestsController < UsersBackofficeController
 
   # GET /requests/new
   def new
-    @request = current_user.requests.new
+    @request = current_user.request
+    if(@request.id > 0)
+      redirect_to edit_request_url(@request) , notice: 'Request was successfully updated.'
+    end
   end
 
   # GET /requests/1/edit
@@ -24,7 +27,7 @@ class RequestsController < UsersBackofficeController
   # POST /requests
   # POST /requests.json
   def create
-    @request = current_user.requests.new(request_params)
+    @request = current_user.request.new(request_params)
 
     respond_to do |format|
       if @request.save
@@ -64,7 +67,7 @@ class RequestsController < UsersBackofficeController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request
-      @request = current_user.requests.find(params[:id])
+      @request = current_user.request
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

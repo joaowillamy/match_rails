@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :brazilian_state_id %><br />
-    <%= f.select("brazilian_state_id", BrazilianState.all.collect{ |m| [ m.description, m.id ] }, {include_blank:'Selecione...'}) %>
+    <%= f.select("brazilian_state_id",  @brazilian_states_options, {include_blank: false} )%>
   </div>
 
 
