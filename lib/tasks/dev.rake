@@ -1,15 +1,17 @@
 namespace :dev do
   desc "Configura o ambiente de desenvolvimento"
   task setup: :environment do
+    BrazilianState.create!(description: 'CE')
+    BrazilianState.create!(description: 'SP')
+    
+    show_spinner("Criando o Administrador padrão...") { %x(rails dev:add_default_admin) }
+    show_spinner("Criando o Usuário padrão...") { %x(rails dev:add_default_user) }
     if Rails.env.development?
       # show_spinner("Apagando BD...") { %x(rails db:drop) }
       # show_spinner("Criando BD...") { %x(rails db:create) }
       # show_spinner("Migrando BD...") { %x(rails db:migrate) }
-      BrazilianState.create!(description: 'CE')
-      BrazilianState.create!(description: 'SP')
     
-      show_spinner("Criando o Administrador padrão...") { %x(rails dev:add_default_admin) }
-      show_spinner("Criando o Usuário padrão...") { %x(rails dev:add_default_user) }
+    
   
     else
       puts "Você não está em ambiente de desenvolvimento!"
