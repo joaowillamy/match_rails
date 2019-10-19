@@ -33,8 +33,9 @@ class RequestsController < UsersBackofficeController
     @request = current_user.request
     respond_to do |format|
       if @request.save
-        format.html { redirect_to @request, notice: 'Request was successfully created.' }
-        format.json { render :show, status: :created, location: @request }
+        
+        format.html { redirect_to requests_path, notice: 'Request was successfully created.' }
+        format.json { render :index, status: :created, location: @request }
       else
         format.html { render :new }
         format.json { render json: @request.errors, status: :unprocessable_entity }
@@ -47,8 +48,8 @@ class RequestsController < UsersBackofficeController
   def update
     respond_to do |format|
       if @request.update(request_params)
-        format.html { redirect_to @request, notice: 'Request was successfully updated.' }
-        format.json { render :show, status: :ok, location: @request }
+        format.html { redirect_to requests_path, notice: 'Request was successfully updated.' }
+        format.json { render :index, status: :ok, location: @request }
       else
         format.html { render :edit }
         format.json { render json: @request.errors, status: :unprocessable_entity }

@@ -1,3 +1,64 @@
 // Place all the styles related to the users_backoffice controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.content-user {
+  max-width: 1130px;
+  margin: 0 auto;
+  padding: 0 30px;
+  background: #fff;
+  height: 500px;
+  margin-top: 30px;
+  box-shadow: rgb(139, 6, 73) 0px 3px 3px;
+  .title {
+    font-size: 27px;
+    color: #f39;
+    padding: 20px 0 10px;
+    border-bottom: 1px solid #f39;
+    display: flex;
+    justify-content: space-between;
+    a {
+      font-size: 14px;
+      color: #f39;
+      // padding: 0 20px;
+      display: flex;
+      border: 1px solid #f39;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      padding: 0 10px;
+      border-radius: 16px;
+    }
+    // padding: 10px 15px;
+  }
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    color: #ccc;
+  }
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 60%;
+  }
+  h4 {
+    font-size: 20px;
+    color: rgb(133, 133, 133);
+  }
+  .info {
+    margin-top: 30px;
+    p {
+      margin: 10px 0 10px 30px;
+    }
+  }
+}
+
+@media all and (max-width: 1130px) {
+  // max-width: 600px;
+  header#main-header nav {
+  }
+}

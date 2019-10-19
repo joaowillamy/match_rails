@@ -1,0 +1,5 @@
+<p class=" status-<%=request.status%> "> 
+  <%= request.open? ? 'Aberto': '' %> 
+  <%= request.pending? ? 'Esperando': '' %> 
+  <%= request.finished? ? 'Finalizado': '' %> 
+</p>

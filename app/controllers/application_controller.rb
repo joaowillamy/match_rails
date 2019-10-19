@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  before_action :configure_select, only: [:new, :edit], if: :devise_controller?
+  before_action :configure_select, if: :devise_controller?
 
   protected
 

@@ -1,8 +1,26 @@
-<h1>LawyersRequest#index</h1>
+<div class="content-lawyer">
+  <h1 class="title" >Seus clientes</h1>
 
-<% @users.each do |user| %>
-  <%=  user.request.title %>
-  <%=  user.email %>
-  <%= link_to "Profile", finished_path(id: user), method: :post %>
-  <br>
-<% end %>
+  
+  <div class="itens">
+    <% @users.each do |user| %>
+      <div class="item">
+        <img src="https://image.flaticon.com/icons/svg/145/145867.svg"> 
+        <p class="email"> <strong><%= user.email %></strong>  </p>
+
+        <p> <strong>Titulo</strong> <%= user.request.title %> </p>
+        <p> <strong>Descrição</strong> <%= user.request.description %> </p>
+        
+        <%= render 'status', request: user.request %>
+
+        <% if user.request.pending? %> 
+          <%= link_to "Finalizar caso", finished_path(id: user), method: :post %>
+        <% end %>
+        
+      </div>
+    <% end %>
+    <% unless @users.any? %>        
+      <h3>Volter Mais tarde</h3>
+    <% end %>
+  <div>
+</div>
