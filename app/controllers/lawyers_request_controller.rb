@@ -1,12 +1,8 @@
 class LawyersRequestController < LawyersBackofficeController
-  
+  before_action :set_user, only: [:accept, :finished]
+
   def index
-    @users = User
-      .joins(:request)
-      .where(
-        brazilian_state_id: current_lawyer.brazilian_state_id, 
-        lawyer_id: nil 
-      )
+    @users = User.without_lawyer(current_lawyer.brazilian_state_id)
   end
 
   def my_list
@@ -14,19 +10,21 @@ class LawyersRequestController < LawyersBackofficeController
   end
 
   def accept
-    @user = User.find_by(id: params[:id])
-    @user.request.status = :pending
-    @user.request.save
-    current_lawyer.users << @user
-    current_lawyer.save  
+    User.update_status(@user, :pending)
+    Lawyer.append_users(lawyer, @user)
 
     redirect_to lawyers_request_index_path 
   end
 
   def finished
-    @user = User.find_by(id: params[:id])
-    @user.request.status = :finished
-    @user.request.save
+    User.update_status(@user, :finished)
+
     redirect_to lawyers_request_my_list_path 
+  end
+
+  private
+
+  def set_user
+    @user = User.find_by(id: params[:id])
   end
 end
